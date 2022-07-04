@@ -8,7 +8,9 @@ const app = express();
 const _PORT = process.env.PORT || 5001;
 
 // Tell app to use the public folder when a request is made to /static.
-app.use("/static", express.static("public"));
+app.use("/", express.static("public"));
+app.use("/home", express.static("public/home.html"));
+app.use("/contact", express.static("public/contact.html"));
 
 // Listening on localhost:5001 for requests to webserver
 app.listen(_PORT, () => {
